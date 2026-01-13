@@ -16,6 +16,8 @@ export type CustomDialogProps = {
   children?: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  title?: string;
+  Description?: string;
 };
 
 function Resusabledialog({
@@ -26,6 +28,8 @@ function Resusabledialog({
   children,
   open,
   onOpenChange,
+  title,
+  Description,
 }: CustomDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -35,8 +39,8 @@ function Resusabledialog({
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Create New Note!</DialogTitle>
-          <DialogDescription></DialogDescription>
+          <DialogTitle>{title}</DialogTitle>
+          <DialogDescription>{Description}</DialogDescription>
         </DialogHeader>
         {children}
       </DialogContent>
